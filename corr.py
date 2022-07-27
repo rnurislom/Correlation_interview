@@ -25,7 +25,7 @@ print(list(corr['Price'][corr['Price'] > 0.8].index))
 print("strong correlations of Change by kendall method")
 print(list(corr['Change'][corr['Change'] > 0.8].index))
 up_triag = corr.where(np.triu(np.ones(corr.shape), k=1).astype(np.bool))
-strong = [column for column in up_triag.columns if any(up_triag[column] > 0.95)]
+strong = [column for column in up_triag.columns if any(up_triag[column] > 0.8)]
 print("strong correlations by kendall method")
 print(strong)
 
@@ -36,6 +36,6 @@ print(list(corr['Price'][corr['Price'] > 0.8].index))
 print("strong correlations of Change by spearman method")
 print(list(corr['Change'][corr['Change'] > 0.8].index))
 up_triag = corr.where(np.triu(np.ones(corr.shape), k=1).astype(np.bool))
-strong = [column for column in up_triag.columns if any(up_triag[column] > 0.95)]
+strong = [column for column in up_triag.columns if any(up_triag[column] > 0.8)]
 print("strong correlations by spearman method")
 print(strong)
